@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <div th:replace="fragments/bodyHeader :: bodyHeader"/>
+
+        <div>
+            <h1>hello shop</h1>
+            <p>회원기능</p>
+            <p>
+                <a href="/members/new">회원 가입</a>
+                <a href="/members">회원 목록</a>
+            </p>
+            <p>상품기능</p>
+            <p>
+                <a href="/items/new">상품 등록</a>
+                <a href="/items">상품 목록</a>
+            </p>
+            <p>주문기능</p>
+            <p>
+                <a href="/order">상품 주문</a>
+                <a href="/orders">주문 내역</a>
+            </p>
+
+
+        </div>
+
+        <div th:replace="fragments/footer :: footer"/>
+    </div>
+</body>
+</html>

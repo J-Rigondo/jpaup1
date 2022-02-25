@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:replace="fragments/bodyHeader :: bodyHeader"/>
+
+
+<form action="/items/new" th:object="${form}" method="post">
+    <input type="text" th:field="*{name}" placeholder="name">
+<!--    <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Incorrect</p>-->
+
+    <input type="text" th:field="*{price}" placeholder="price">
+    <input type="text" th:field="*{stockQuantity}" placeholder="stockQuantity">
+    <input type="text" th:field="*{author}" placeholder="author">
+    <input type="text" th:field="*{isbn}" placeholder="isbn">
+
+    <input type="submit" value="submit">
+</form>
+
+<div th:replace="fragments/footer :: footer"/>
+
+</body>
+</html>
