@@ -26,7 +26,6 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-devtools'
     implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-hibernate5'
 
-    implementation 'junit:junit:4.13.1'
     implementation group: 'io.springfox', name: 'springfox-boot-starter', version: '3.0.0'
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'com.h2database:h2'

@@ -1,8 +1,7 @@
 package com.jpa.jpaup1.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -10,12 +9,16 @@ import java.util.List;
 
 @Entity
 @Getter @Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Member {
     @Id @GeneratedValue
     @Column(name = "member_id")
     private Long id;
 
-    private String name;
+    @Column(unique = true)
+    private String name; //실무에서는 검증로직이 있어도 멀티 쓰레드 상황을 고려해서 회원명 컬럼에 유니크제약필요
 
     @Embedded //내장 타입
     private Address address;

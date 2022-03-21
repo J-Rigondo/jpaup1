@@ -4,8 +4,7 @@ import com.jpa.jpaup1.domain.*;
 import com.jpa.jpaup1.domain.item.Book;
 import com.jpa.jpaup1.exception.NotEnoughStockExcetpion;
 import com.jpa.jpaup1.repository.OrderRepository;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -13,9 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 
-import static org.junit.Assert.*;
-
-@RunWith(SpringRunner.class)
 @SpringBootTest
 @Transactional
 public class OrderServiceTest {
@@ -71,22 +67,22 @@ public class OrderServiceTest {
     }
 
 
-
-    @Test(expected = NotEnoughStockExcetpion.class)
-    public void 주문취소() throws Exception {
-
-        Member member = getMember("mem1", new Address("seoul", "liver", "2323"));
-        Book book = getBook("jpa", 10000, 10);
-
-        int orderCount = 11;
-
-        orderService.order(member.getId(), book.getId(), orderCount);
-
-        fail("expect exception");
-
-
-
-    }
+//
+//    @Test(expected = NotEnoughStockExcetpion.class)
+//    public void 주문취소() throws Exception {
+//
+//        Member member = getMember("mem1", new Address("seoul", "liver", "2323"));
+//        Book book = getBook("jpa", 10000, 10);
+//
+//        int orderCount = 11;
+//
+//        orderService.order(member.getId(), book.getId(), orderCount);
+//
+//        fail("expect exception");
+//
+//
+//
+//    }
 
     @Test
     public void 상품주문_재고수량초과() throws Exception {
